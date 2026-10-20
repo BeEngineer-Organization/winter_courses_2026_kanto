@@ -3,33 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>BeEngineer 2026 冬の講習会｜京大本校・梅田校</title>
+    <title>BeEngineer 2026 冬の講習会｜飯田橋校・横浜校</title>
     <meta
       name="description"
-      content="京大本校・梅田校のBeEngineer会員生向け、2026年冬の講習会の案内です。プログラミング経験のある一般生・過去参加者の一般生も参加できます。"
+      content="飯田橋校・横浜校のBeEngineer会員生向け、2026年冬の講習会の案内です。プログラミング経験のある一般生・過去参加者の一般生も参加できます。"
     />
     <meta name="robots" content="noindex, follow" />
     <meta name="theme-color" content="#f1faff" />
-    <meta property="og:title" content="BeEngineer 2026 冬の講習会｜京大本校・梅田校" />
+    <meta property="og:title" content="BeEngineer 2026 冬の講習会｜飯田橋校・横浜校" />
     <meta
       property="og:description"
-      content="京大本校・梅田校のBeEngineer会員生向け、2026年冬の講習会の案内です。プログラミング経験のある一般生・過去参加者の一般生も参加できます。"
+      content="飯田橋校・横浜校のBeEngineer会員生向け、2026年冬の講習会の案内です。プログラミング経験のある一般生・過去参加者の一般生も参加できます。"
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ja_JP" />
-    <link rel="canonical" href="https://beengineer-organization.github.io/winter_courses_2026_kansai/" />
-    <meta property="og:url" content="https://beengineer-organization.github.io/winter_courses_2026_kansai/" />
+    <link rel="canonical" href="https://beengineer-organization.github.io/winter_courses_2026_kantou/" />
+    <meta property="og:url" content="https://beengineer-organization.github.io/winter_courses_2026_kantou/" />
     <meta property="og:site_name" content="BeEngineer" />
     <meta
       property="og:image"
-      content="https://beengineer-organization.github.io/winter_courses_2026_kansai/assets/images/ogp.png"
+      content="https://beengineer-organization.github.io/winter_courses_2026_kantou/assets/images/ogp.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="BeEngineer 2026 冬の講習会｜京大本校・梅田校" />
+    <meta property="og:image:alt" content="BeEngineer 2026 冬の講習会｜飯田橋校・横浜校" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href="./assets/images/fv-hero.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="./assets/images/fv-hero.png" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,15 +40,11 @@
     <script>
       (function () {
         var root = document.documentElement;
-        // JSが動く環境の目印（スマホ下部の固定CTAを最初は隠すのに使う）
         root.classList.add("js");
-        // 演出を使う環境だけ .js-motion を付ける（視差効果を減らす設定の人には付けない）
         if (!matchMedia("(prefers-reduced-motion: reduce)").matches) root.classList.add("js-motion");
 
-        // ハロウィン仕様：?theme=halloween が付いているときだけ。詳しくは README「ハロウィン仕様」。
         if (new URLSearchParams(location.search).get("theme") !== "halloween") return;
         root.classList.add("theme-halloween");
-        // 黒い画面は、通常のページが一瞬見えないよう読み込み前から出しておく（再読み込みのたびに毎回出す）
         if (root.classList.contains("js-motion")) root.classList.add("hw-cover", "hw-hold");
         var css = document.createElement("link");
         css.rel = "stylesheet";
@@ -58,13 +54,11 @@
         var js = document.createElement("script");
         js.src = "./assets/js/halloween.js";
         document.head.appendChild(js);
-        // 読み込みに失敗しても、黒い画面のまま止まらないようにする
         setTimeout(function () {
           if (!window.__hwStarted) root.classList.remove("hw-cover", "hw-hold");
         }, 4000);
       })();
     </script>
-    <!-- 画像の差し替え箇所は README.md の「画像」を参照 -->
   </head>
   <body id="top">
     <a class="skip" href="#main">本文へスキップ</a>
@@ -79,7 +73,6 @@
           <a href="#pricing">料金</a>
           <a class="nav__entry" href="#schedule">申込</a>
         </nav>
-        <!-- 申込CTA（ヘッダー）。講座ごとの申込ボタンがある「お申し込み」欄へ移動する -->
         <a class="btn btn-cta btn--sm header-cta" href="#schedule">申し込む</a>
       </div>
     </header>
@@ -91,7 +84,7 @@
           <div class="hero__media">
             <figure class="hero__photo">
               <img
-                src="./assets/images/fv-hero.jpg"
+                src="./assets/images/fv-hero.png"
                 alt="モニターに映したPythonのコードを講師が説明し、生徒がノートPCで手を動かしている授業風景"
                 width="1084"
                 height="816"
@@ -103,17 +96,17 @@
               <img src="./assets/images/fv-sub.jpg" alt="" width="1134" height="898" loading="lazy" />
             </figure>
             <p class="hero__ribbon" aria-hidden="true">
-              <span>タイピングゲーム</span>
-              <span>3Dゲーム</span>
-              <span>AIの開発</span>
+              <span>Python</span>
+              <span>RPG制作</span>
+              <span>AI・タイピング</span>
             </p>
           </div>
 
           <div class="hero__copy">
             <p class="campus-chips">
-              <span class="area">関西版</span>
-              <span class="chip chip--kyodai">京大本校</span>
-              <span class="chip chip--umeda">梅田校</span>
+              <span class="area">関東版</span>
+              <span class="chip chip--iidabashi">飯田橋校</span>
+              <span class="chip chip--yokohama">横浜校</span>
             </p>
             <h1 id="hero-title" class="hero__title">
               <span class="hero__title-brand">BeEngineer 2026</span>
@@ -121,16 +114,16 @@
             </h1>
             <p class="hero__lead">この冬、いつもの学びを<br class="sp-only" />新しい作品へ</p>
             <p class="hero__text">
-              京大本校ではタイピングゲーム、<br />梅田校では3DゲームとAIの開発に挑戦。<br />ゲームやAIが動く仕組みを、<br class="sp-only" />自分の手で作りながら学びます。
+              飯田橋校・横浜校で実践的な講座を開催。<br />プログラムが動く仕組みを、<br class="sp-only" />自分の手で作りながら学びます。
             </p>
 
             <dl class="hero__date">
-              <dt>開催日</dt>
+              <dt>開催期間</dt>
               <dd>
                 <span class="hero__date-y">2026年</span>
                 <span class="hero__date-d">12<small>月</small>19<small>日</small><span class="wk">土</span></span>
-                <span class="hero__date-sep" aria-hidden="true">・</span>
-                <span class="hero__date-d">20<small>日</small><span class="wk wk--sun">日</span></span>
+                <span class="hero__date-sep" aria-hidden="true">〜</span>
+                <span class="hero__date-d">28<small>日</small><span class="wk">月</span></span>
               </dd>
             </dl>
 
@@ -158,36 +151,36 @@
             <p class="section-head__en" aria-hidden="true">COURSES</p>
             <h2 id="events-title">講習会紹介</h2>
             <p class="section-head__lead">
-              京大本校で1講座、梅田校で2講座を開催します。
+              飯田橋校で3講座、横浜校で1講座を開催します。
             </p>
           </header>
 
-          <!-- 京大本校 -->
-          <div class="campus-group" id="campus-kyodai">
-            <h3 class="campus-label campus-label--kyodai">京大本校の講座</h3>
+          <!-- 飯田橋校 -->
+          <div class="campus-group" id="campus-iidabashi">
+            <h3 class="campus-label campus-label--iidabashi">飯田橋校の講座</h3>
 
-            <article class="course" id="course-typing" data-course-id="course-typing" aria-labelledby="course-typing-title">
+            <article class="course" id="course-python-master" data-course-id="course-python-master" aria-labelledby="course-python-master-title">
               <div class="course__head">
-                <h4 id="course-typing-title" class="course__title">JavaScript で<br class="sp-only" />タイピングゲームを<wbr />作ろう！</h4>
+                <h4 id="course-python-master-title" class="course__title">Pythonマスター講座</h4>
                 <ul class="tags" aria-label="講座の特徴">
                   <li class="tag">2日間</li>
-                  <li class="tag">ゲーム制作</li>
+                  <li class="tag">基礎講座</li>
                 </ul>
               </div>
               <div class="course__body">
                 <figure class="course__img">
                   <img
-                    src="./assets/images/course-typing.png"
-                    alt="タイピングゲームの画面。レベル別の英単語が丸の中に並び、ミス数・タイム・入力した単語数が表示されている"
+                    src="./assets/images/course-python.png"
+                    alt="Pythonマスター講座の画面"
                     width="683"
                     height="456"
                     loading="lazy"
                   />
                 </figure>
                 <div class="course__text">
-                  <p class="course__hook">オリジナルのゲームで作成！<br class="sp-only" />スコアで友達とバトル！</p>
+                  <p class="course__hook">AI時代でもプログラミング学習は重要！<br class="sp-only" />2日で基礎文法マスター！</p>
                   <p class="course__desc">
-                    学校で練習などに用いられるタイピングゲームを自分で作ってみます。また、作ったゲームをアップロードするので、友達とスコアを競ってみましょう！
+                    ゲームやアプリ、AIなど幅広く利用されるPythonをわずか2日でマスターします。 必修科目となった情報1のプログラミングの対策としても学ぶことができるので、楽しみながらマスターすることができます。
                   </p>
                   <dl class="spec">
                     <div class="spec__row">
@@ -203,55 +196,56 @@
                     </div>
                     <div class="spec__row">
                       <dt>受講料</dt>
-                      <dd><strong class="spec__price">32,000円</strong></dd>
+                      <dd>
+                        <strong class="spec__price">20,000円</strong>
+                        <span class="spec__sub">複数申込の場合 12,000円</span>
+                      </dd>
                     </div>
                   </dl>
                 </div>
               </div>
             </article>
-          </div>
 
-          <!-- 梅田校 -->
-          <div class="campus-group" id="campus-umeda">
-            <h3 class="campus-label campus-label--umeda">梅田校の講座</h3>
-
-            <article class="course" id="course-python-3d" data-course-id="course-python-3d" aria-labelledby="course-python-3d-title">
+            <article class="course" id="course-rpg" data-course-id="course-rpg" aria-labelledby="course-rpg-title">
               <div class="course__head">
-                <h4 id="course-python-3d-title" class="course__title">Python で 3D ゲーム開発</h4>
+                <h4 id="course-rpg-title" class="course__title">RPGを作ろう！</h4>
                 <ul class="tags" aria-label="講座の特徴">
-                  <li class="tag">1日</li>
-                  <li class="tag">ゲーム制作</li>
+                  <li class="tag">2日間</li>
+                  <li class="tag">ゲーム</li>
                 </ul>
               </div>
               <div class="course__body">
                 <figure class="course__img">
                   <img
-                    src="./assets/images/course-python-3d.png"
-                    alt="Pythonで作る3Dゲームの画面。トンネルの道路を走る車と、その横を歩くキャラクター"
-                    width="1366"
-                    height="767"
+                    src="./assets/images/course-rpg.png"
+                    alt="RPGを作ろう！"
+                    width="683"
+                    height="456"
                     loading="lazy"
                   />
                 </figure>
                 <div class="course__text">
-                  <p class="course__hook">いつものゲームの<br class="sp-only" />「裏側」をのぞいてみよう！</p>
+                  <p class="course__hook">オリジナルのゲームで作成！<br class="sp-only" />スコアで友達とバトル！</p>
                   <p class="course__desc">
-                    普段遊んでいるゲームは、どんな仕組みや考え方で作られているのでしょうか。3Dモデルの作り方と扱い方、キャラクターを動かすロジック、当たり判定の仕組みなどを、Pythonで3Dゲームを作りながら学びます。
+                    モンスターとのバトルの仕組みやコマンドの選択、マップ上の移動など、様々なゲームに組み込まれている仕掛けを、自分だけのオリジナルロールプレイングゲーム制作を通して楽しく学ぼう！
                   </p>
                   <dl class="spec">
                     <div class="spec__row">
                       <dt>開催日</dt>
-                      <dd>12月19日（土）</dd>
+                      <dd>12月26日（土）・27日（日）の2日間</dd>
                     </div>
                     <div class="spec__row">
                       <dt>時間</dt>
-                      <dd><span class="time">14:00〜18:30</span></dd>
+                      <dd>
+                        <span class="time">14:00〜18:30</span>
+                        <span class="spec__sub">両日とも同じ時間帯</span>
+                      </dd>
                     </div>
                     <div class="spec__row">
                       <dt>受講料</dt>
                       <dd>
-                        <strong class="spec__price">16,000円</strong>
-                        <span class="spec__sub">複数申込の場合 12,000円</span>
+                        <strong class="spec__price">32,000円</strong>
+                        <span class="spec__sub">複数申込の場合 24,000円</span>
                       </dd>
                     </div>
                   </dl>
@@ -269,7 +263,6 @@
               </div>
               <div class="course__body">
                 <figure class="course__img course__img--illust">
-                  <!-- 実際の制作画面が届いたら差し替え（README「画像」） -->
                   <img src="./assets/images/course-sudoku.svg" alt="" width="600" height="400" loading="lazy" />
                 </figure>
                 <div class="course__text">
@@ -280,7 +273,7 @@
                   <dl class="spec">
                     <div class="spec__row">
                       <dt>開催日</dt>
-                      <dd>12月20日（日）</dd>
+                      <dd>12月28日（月）</dd>
                     </div>
                     <div class="spec__row">
                       <dt>時間</dt>
@@ -291,6 +284,58 @@
                       <dd>
                         <strong class="spec__price">16,000円</strong>
                         <span class="spec__sub">複数申込の場合 12,000円</span>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- 横浜校 -->
+          <div class="campus-group" id="campus-yokohama">
+            <h3 class="campus-label campus-label--yokohama">横浜校の講座</h3>
+
+            <article class="course" id="course-typing" data-course-id="course-typing" aria-labelledby="course-typing-title">
+              <div class="course__head">
+                <h4 id="course-typing-title" class="course__title">JavaScript で<br class="sp-only" />タイピングゲームを<wbr />作ろう！</h4>
+                <ul class="tags" aria-label="講座の特徴">
+                  <li class="tag">2日間</li>
+                  <li class="tag">アプリ制作</li>
+                </ul>
+              </div>
+              <div class="course__body">
+                <figure class="course__img">
+                  <img
+                    src="./assets/images/course-typing.png"
+                    alt="タイピングゲームの画面。レベル別の英単語が丸の中に並び、ミス数・タイム・入力した単語数が表示されている"
+                    width="683"
+                    height="456"
+                    loading="lazy"
+                  />
+                </figure>
+                <div class="course__text">
+                  <p class="course__hook">オリジナルのゲームで作成！<br class="sp-only" />スコアで友達とバトル！</p>
+                  <p class="course__desc">
+                    学校で練習などに用いられるタイピングゲームを自分で作ってみます。また、作ったゲームはアップロードして、友達や家族もアクセスできるようになります。スコアを競ってみましょう！
+                  </p>
+                  <dl class="spec">
+                    <div class="spec__row">
+                      <dt>開催日</dt>
+                      <dd>12月19日（土）・20日（日）の2日間</dd>
+                    </div>
+                    <div class="spec__row">
+                      <dt>時間</dt>
+                      <dd>
+                        <span class="time">14:00〜18:30</span>
+                        <span class="spec__sub">両日とも同じ時間帯</span>
+                      </dd>
+                    </div>
+                    <div class="spec__row">
+                      <dt>受講料</dt>
+                      <dd>
+                        <strong class="spec__price">32,000円</strong>
+                        <span class="spec__sub">複数申込の場合 24,000円</span>
                       </dd>
                     </div>
                   </dl>
@@ -312,7 +357,7 @@
 
           <div class="price-wrap">
             <table class="price-table">
-              <caption class="u-hidden">2026年冬の講習会（関西版）の受講料（税込）</caption>
+              <caption class="u-hidden">2026年冬の講習会（関東版）の受講料（税込）</caption>
               <thead>
                 <tr>
                   <th scope="col">講座</th>
@@ -320,64 +365,71 @@
                 </tr>
               </thead>
               <tbody>
-                <tr id="price-course-typing" data-course-id="course-typing">
+                <tr id="price-course-python-master" data-course-id="course-python-master">
                   <th scope="row">
                     <div class="price-item">
-                      <span class="price-thumb" aria-hidden="true"><img src="./assets/images/course-typing.png" alt="" width="683" height="456" loading="lazy" /></span>
+                      <span class="price-thumb" aria-hidden="true"><img src="./assets/images/course-python.png" alt="" width="683" height="456" loading="lazy" /></span>
                       <span class="price-item__body">
-                        <span class="chip chip--kyodai chip--sm">京大本校</span>
-                        <span class="price-table__name">JavaScript で<br class="sp-only" />タイピングゲームを<span class="nowrap">作ろう！</span></span>
+                        <span class="chip chip--iidabashi chip--sm">飯田橋校</span>
+                        <span class="price-table__name">Pythonマスター講座</span>
                         <span class="price-table__days">12月19日（土）・20日（日）</span>
                       </span>
                     </div>
                   </th>
-                  <td class="price" data-label="受講料">32,000<small>円</small></td>
-                </tr>
-                <!-- 梅田校2講座セット（12,000円×2講座。申込ページ 518） -->
-                <tr id="price-umeda-bundle" class="price-table__bundle" data-course-id="course-python-3d course-sudoku">
-                  <th scope="row">
-                    <div class="price-item">
-                      <span class="price-thumb price-thumb--split" aria-hidden="true"><img src="./assets/images/course-python-3d.png" alt="" width="1366" height="767" loading="lazy" /><img src="./assets/images/course-sudoku.svg" alt="" width="600" height="400" loading="lazy" /></span>
-                      <span class="price-item__body">
-                        <span class="chip chip--umeda chip--sm">梅田校</span>
-                        <span class="bundle-label">2講座セット</span>
-                        <span class="price-table__name"><span class="price-table__part">Python で 3D ゲーム開発 ＋</span> <span class="price-table__part">機械学習で数独（ナンプレ）を<br class="sp-only" />攻略しよう</span></span>
-                        <span class="price-table__days">12月19日（土）・20日（日）</span>
-                      </span>
-                    </div>
-                  </th>
-                  <td class="price price--discount" data-label="受講料">
-                    24,000<small>円</small><span class="price__note">通常 32,000円</span>
+                  <td class="price" data-label="受講料">
+                    20,000<small>円</small><span class="price__note">複数申込 12,000円</span>
                   </td>
                 </tr>
-                <tr id="price-course-python-3d" data-course-id="course-python-3d">
+                <tr id="price-course-rpg" data-course-id="course-rpg">
                   <th scope="row">
                     <div class="price-item">
-                      <span class="price-thumb" aria-hidden="true"><img src="./assets/images/course-python-3d.png" alt="" width="1366" height="767" loading="lazy" /></span>
+                      <span class="price-thumb" aria-hidden="true"><img src="./assets/images/course-rpg.png" alt="" width="683" height="456" loading="lazy" /></span>
                       <span class="price-item__body">
-                        <span class="chip chip--umeda chip--sm">梅田校</span>
-                        <span class="price-table__name">Python で 3D ゲーム開発</span>
-                        <span class="price-table__days">12月19日（土）</span>
+                        <span class="chip chip--iidabashi chip--sm">飯田橋校</span>
+                        <span class="price-table__name">RPGを作ろう！</span>
+                        <span class="price-table__days">12月26日（土）・27日（日）</span>
                       </span>
                     </div>
                   </th>
-                  <td class="price" data-label="受講料">16,000<small>円</small></td>
+                  <td class="price" data-label="受講料">
+                    32,000<small>円</small><span class="price__note">複数申込 24,000円</span>
+                  </td>
                 </tr>
                 <tr id="price-course-sudoku" data-course-id="course-sudoku">
                   <th scope="row">
                     <div class="price-item">
                       <span class="price-thumb" aria-hidden="true"><img src="./assets/images/course-sudoku.svg" alt="" width="600" height="400" loading="lazy" /></span>
                       <span class="price-item__body">
-                        <span class="chip chip--umeda chip--sm">梅田校</span>
+                        <span class="chip chip--iidabashi chip--sm">飯田橋校</span>
                         <span class="price-table__name">機械学習で数独（ナンプレ）を攻略しよう</span>
-                        <span class="price-table__days">12月20日（日）</span>
+                        <span class="price-table__days">12月28日（月）</span>
                       </span>
                     </div>
                   </th>
-                  <td class="price" data-label="受講料">16,000<small>円</small></td>
+                  <td class="price" data-label="受講料">
+                    16,000<small>円</small><span class="price__note">複数申込 12,000円</span>
+                  </td>
+                </tr>
+                <tr id="price-course-typing" data-course-id="course-typing">
+                  <th scope="row">
+                    <div class="price-item">
+                      <span class="price-thumb" aria-hidden="true"><img src="./assets/images/course-typing.png" alt="" width="683" height="456" loading="lazy" /></span>
+                      <span class="price-item__body">
+                        <span class="chip chip--yokohama chip--sm">横浜校</span>
+                        <span class="price-table__name">JavaScript で<br class="sp-only" />タイピングゲームを<span class="nowrap">作ろう！</span></span>
+                        <span class="price-table__days">12月19日（土）・20日（日）</span>
+                      </span>
+                    </div>
+                  </th>
+                  <td class="price" data-label="受講料">
+                    32,000<small>円</small><span class="price__note">複数申込 24,000円</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
+            <p class="price-note-multi" style="margin-top:1.5rem; font-size:0.92rem; line-height:1.6;">
+              ※複数講座をお申し込みの際は専用のお申し込みページを別途お知らせいたします。<a href="https://lin.ee/va50XGP" target="_blank" rel="noopener noreferrer">BeEngineer飯田橋校LINE</a>からご連絡ください。
+            </p>
           </div>
         </div>
       </section>
@@ -388,21 +440,21 @@
           <header class="section-head">
             <p class="section-head__en" aria-hidden="true">ENTRY</p>
             <h2 id="schedule-title">冬の講習会の<br class="sp-only" />お申し込み</h2>
-            <p class="section-head__lead">開催枠を日付の順に掲載しています。<br class="sp-only" />時刻は日本時間です。</p>
+            <p class="section-head__lead">開催枠を日付の順に掲載しています。</p>
           </header>
 
           <div class="filters" role="group" aria-label="校舎で日程を絞り込む">
             <button type="button" class="filter" data-campus-filter="all" aria-pressed="true">
               <svg class="filter__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
-              関西2校舎すべて
+              関東2校舎すべて
             </button>
-            <button type="button" class="filter" data-campus-filter="kyodai" aria-pressed="false">
+            <button type="button" class="filter" data-campus-filter="iidabashi" aria-pressed="false">
               <svg class="filter__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
-              京大本校
+              飯田橋校
             </button>
-            <button type="button" class="filter" data-campus-filter="umeda" aria-pressed="false">
+            <button type="button" class="filter" data-campus-filter="yokohama" aria-pressed="false">
               <svg class="filter__check" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
-              梅田校
+              横浜校
             </button>
           </div>
           <p class="filter-count" data-filter-count aria-live="polite"></p>
@@ -410,13 +462,13 @@
           <div id="schedule-list" class="schedule-list" data-schedule-list>
             <article
               class="session"
-              id="session-kyodai-typing"
+              id="session-iidabashi-python-master"
               data-session
-              data-campus="kyodai"
+              data-campus="iidabashi"
               data-status="open"
-              data-course-id="course-typing"
+              data-course-id="course-python-master"
               data-end="2026-12-20T18:30:00+09:00"
-              aria-labelledby="session-kyodai-typing-title"
+              aria-labelledby="session-iidabashi-python-master-title"
             >
               <div class="session__dates" aria-hidden="true">
                 <span class="day"><span class="day__md">12/19</span><span class="day__wk">土</span></span>
@@ -425,10 +477,10 @@
               </div>
               <div class="session__main">
                 <div class="session__top">
-                  <span class="chip chip--kyodai chip--sm">京大本校</span>
+                  <span class="chip chip--iidabashi chip--sm">飯田橋校</span>
                   <span class="status status--open" data-status-label>受付中</span>
                 </div>
-                <h3 id="session-kyodai-typing-title" class="session__title">JavaScript で<br class="sp-only" />タイピングゲームを<span class="nowrap">作ろう！</span></h3>
+                <h3 id="session-iidabashi-python-master-title" class="session__title">Pythonマスター講座</h3>
                 <ul class="session__when">
                   <li><time datetime="2026-12-19">2026年12月19日（土）</time><span>14:00〜18:30</span></li>
                   <li><time datetime="2026-12-20">2026年12月20日（日）</time><span>14:00〜18:30</span></li>
@@ -437,129 +489,127 @@
                 <a
                   class="btn btn-cta btn--sm"
                   data-session-cta
-                  href="https://be-engineer.tech/event-list/515"
-                  aria-label="京大本校 JavaScript でタイピングゲームを作ろう！（12月19日・20日）に申し込む"
+                  href="https://be-engineer.tech/event-list/516"
+                  aria-label="飯田橋校 Pythonマスター講座（12月19日・20日）に申し込む"
                 >
                   申し込む
                 </a>
               </div>
             </article>
 
-            <!-- 梅田校2講座のまとめて申込（申込ページ 518。2講座セット 24,000円） -->
             <article
-              class="session session--bundle"
-              id="session-umeda-bundle"
+              class="session"
+              id="session-yokohama-typing"
               data-session
-              data-campus="umeda"
+              data-campus="yokohama"
               data-status="open"
-              data-course-id="course-python-3d course-sudoku"
+              data-course-id="course-typing"
               data-end="2026-12-20T18:30:00+09:00"
-              aria-labelledby="session-umeda-bundle-title"
+              aria-labelledby="session-yokohama-typing-title"
             >
               <div class="session__dates" aria-hidden="true">
                 <span class="day"><span class="day__md">12/19</span><span class="day__wk">土</span></span>
                 <span class="day day--sun"><span class="day__md">12/20</span><span class="day__wk">日</span></span>
-                <span class="session__span">2講座セット</span>
+                <span class="session__span">2日間</span>
               </div>
               <div class="session__main">
                 <div class="session__top">
-                  <span class="chip chip--umeda chip--sm">梅田校</span>
+                  <span class="chip chip--yokohama chip--sm">横浜校</span>
                   <span class="status status--open" data-status-label>受付中</span>
                 </div>
-                <h3 id="session-umeda-bundle-title" class="session__title">梅田校の2講座をまとめて受講</h3>
-                <ul class="session__when session__when--bundle">
-                  <li>
-                    <strong class="session__course">Python で 3D ゲーム開発</strong>
-                    <time datetime="2026-12-19">12月19日（土）</time><span>14:00〜18:30</span>
-                  </li>
-                  <li>
-                    <strong class="session__course">機械学習で<br class="sp-only" />数独（ナンプレ）を攻略しよう</strong>
-                    <time datetime="2026-12-20">12月20日（日）</time><span>14:00〜18:30</span>
-                  </li>
+                <h3 id="session-yokohama-typing-title" class="session__title">JavaScript で<br class="sp-only" />タイピングゲームを<span class="nowrap">作ろう！</span></h3>
+                <ul class="session__when">
+                  <li><time datetime="2026-12-19">2026年12月19日（土）</time><span>14:00〜18:30</span></li>
+                  <li><time datetime="2026-12-20">2026年12月20日（日）</time><span>14:00〜18:30</span></li>
                 </ul>
-                <p class="bundle-price">
-                  受講料<s>32,000円</s><span class="bundle-price__arrow" aria-hidden="true">→</span><strong>24,000円</strong
-                  ><span class="bundle-price__note">（2講座セット）</span>
-                </p>
+                <p class="session__meta">2日間の講座です。2日分の日程をまとめて掲載しています。</p>
                 <a
                   class="btn btn-cta btn--sm"
                   data-session-cta
-                  href="https://be-engineer.tech/event-list/518"
-                  aria-label="梅田校 Python で 3D ゲーム開発と機械学習で数独（ナンプレ）を攻略しようの2講座（12月19日・20日）にまとめて申し込む"
+                  href="https://be-engineer.tech/event-list/516"
+                  aria-label="横浜校 JavaScript でタイピングゲームを作ろう！（12月19日・20日）に申し込む"
                 >
-                  2講座まとめて申し込む
+                  申し込む
                 </a>
               </div>
             </article>
 
             <article
               class="session"
-              id="session-umeda-python-3d"
+              id="session-iidabashi-rpg"
               data-session
-              data-campus="umeda"
+              data-campus="iidabashi"
               data-status="open"
-              data-course-id="course-python-3d"
-              data-end="2026-12-19T18:30:00+09:00"
-              aria-labelledby="session-umeda-python-3d-title"
+              data-course-id="course-rpg"
+              data-end="2026-12-27T18:30:00+09:00"
+              aria-labelledby="session-iidabashi-rpg-title"
             >
               <div class="session__dates" aria-hidden="true">
-                <span class="day"><span class="day__md">12/19</span><span class="day__wk">土</span></span>
+                <span class="day"><span class="day__md">12/26</span><span class="day__wk">土</span></span>
+                <span class="day day--sun"><span class="day__md">12/27</span><span class="day__wk">日</span></span>
+                <span class="session__span">2日間</span>
+              </div>
+              <div class="session__main">
+                <div class="session__top">
+                  <span class="chip chip--iidabashi chip--sm">飯田橋校</span>
+                  <span class="status status--open" data-status-label>受付中</span>
+                </div>
+                <h3 id="session-iidabashi-rpg-title" class="session__title">RPGを作ろう！</h3>
+                <ul class="session__when">
+                  <li><time datetime="2026-12-26">2026年12月26日（土）</time><span>14:00〜18:30</span></li>
+                  <li><time datetime="2026-12-27">2026年12月27日（日）</time><span>14:00〜18:30</span></li>
+                </ul>
+                <p class="session__meta">2日間の講座です。2日分の日程をまとめて掲載しています。</p>
+                <a
+                  class="btn btn-cta btn--sm"
+                  data-session-cta
+                  href="https://be-engineer.tech/event-list/516"
+                  aria-label="飯田橋校 RPGを作ろう！（12月26日・27日）に申し込む"
+                >
+                  申し込む
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="session"
+              id="session-iidabashi-sudoku"
+              data-session
+              data-campus="iidabashi"
+              data-status="open"
+              data-course-id="course-sudoku"
+              data-end="2026-12-28T18:30:00+09:00"
+              aria-labelledby="session-iidabashi-sudoku-title"
+            >
+              <div class="session__dates" aria-hidden="true">
+                <span class="day"><span class="day__md">12/28</span><span class="day__wk">月</span></span>
                 <span class="session__span">1日</span>
               </div>
               <div class="session__main">
                 <div class="session__top">
-                  <span class="chip chip--umeda chip--sm">梅田校</span>
+                  <span class="chip chip--iidabashi chip--sm">飯田橋校</span>
                   <span class="status status--open" data-status-label>受付中</span>
                 </div>
-                <h3 id="session-umeda-python-3d-title" class="session__title">Python で 3D ゲーム開発</h3>
+                <h3 id="session-iidabashi-sudoku-title" class="session__title">機械学習で<br class="sp-only" />数独（ナンプレ）を攻略しよう</h3>
                 <ul class="session__when">
-                  <li><time datetime="2026-12-19">2026年12月19日（土）</time><span>14:00〜18:30</span></li>
+                  <li><time datetime="2026-12-28">2026年12月28日（月）</time><span>14:00〜18:30</span></li>
                 </ul>
                 <a
                   class="btn btn-cta btn--sm"
                   data-session-cta
                   href="https://be-engineer.tech/event-list/516"
-                  aria-label="梅田校 Python で 3D ゲーム開発（12月19日）に申し込む"
-                >
-                  申し込む
-                </a>
-              </div>
-            </article>
-
-            <article
-              class="session"
-              id="session-umeda-sudoku"
-              data-session
-              data-campus="umeda"
-              data-status="open"
-              data-course-id="course-sudoku"
-              data-end="2026-12-20T18:30:00+09:00"
-              aria-labelledby="session-umeda-sudoku-title"
-            >
-              <div class="session__dates" aria-hidden="true">
-                <span class="day day--sun"><span class="day__md">12/20</span><span class="day__wk">日</span></span>
-                <span class="session__span">1日</span>
-              </div>
-              <div class="session__main">
-                <div class="session__top">
-                  <span class="chip chip--umeda chip--sm">梅田校</span>
-                  <span class="status status--open" data-status-label>受付中</span>
-                </div>
-                <h3 id="session-umeda-sudoku-title" class="session__title">機械学習で<br class="sp-only" />数独（ナンプレ）を攻略しよう</h3>
-                <ul class="session__when">
-                  <li><time datetime="2026-12-20">2026年12月20日（日）</time><span>14:00〜18:30</span></li>
-                </ul>
-                <a
-                  class="btn btn-cta btn--sm"
-                  data-session-cta
-                  href="https://be-engineer.tech/event-list/517"
-                  aria-label="梅田校 機械学習で数独（ナンプレ）を攻略しよう（12月20日）に申し込む"
+                  aria-label="飯田橋校 機械学習で数独（ナンプレ）を攻略しよう（12月28日）に申し込む"
                 >
                   申し込む
                 </a>
               </div>
             </article>
           </div>
+          
+          <p class="schedule-note-multi" style="margin-top:1.5rem; font-size:0.92rem; line-height:1.6;">
+            ※複数講座をお申し込みの際は専用のお申し込みページを別途お知らせいたします。<a href="https://lin.ee/va50XGP" target="_blank" rel="noopener noreferrer">BeEngineer飯田橋校LINE</a>からご連絡ください。
+          </p>
+
           <p class="schedule-message" data-schedule-preparing aria-live="polite" hidden>
             スケジュールは準備中です。開催枠が決まり次第、校舎・日時・受付状態を掲載します。
           </p>
@@ -573,7 +623,7 @@
     <footer class="site-footer">
       <div class="wrap footer-inner">
         <img src="./assets/images/logo_color.svg" alt="BeEngineer" width="120" height="48" />
-        <p>BeEngineer 2026 冬の講習会 関西版<br class="sp-only" />（京大本校・梅田校）</p>
+        <p>BeEngineer 2026 冬の講習会 関東版<br class="sp-only" />（飯田橋校・横浜校）</p>
         <p><small>© 2026 BeEngineer</small></p>
       </div>
     </footer>

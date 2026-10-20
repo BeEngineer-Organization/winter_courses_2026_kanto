@@ -1,5 +1,5 @@
 /* =========================================================
-   BeEngineer 2026 冬の講習会 関西版
+   BeEngineer 2026 冬の講習会 関東版
    2025年冬LPの配色（水色の地・濃紺の文字・青〜シアン・黄色CTA・
    校舎色）と、黄色ボタン＋濃紺のずらし影を引き継ぐ。
    スマートフォン基準で書き、720px / 960px で広げる。
@@ -19,8 +19,8 @@
   --yellow: #fef603;
   --yellow-2: #f3e700;
   --tag: #ffd900;
-  --kyodai: #5fdb7c;
-  --umeda: #ffb2ce;
+  --iidabashi: #5fdb7c;
+  --yokohama: #ffb2ce;
   --text-sub: #33446f;
   --muted: #5b6a8f;
   --sat: #0072ff;
@@ -177,12 +177,12 @@ a {
   font-size: 0.78rem;
 }
 
-.chip--kyodai {
-  background: var(--kyodai);
+.chip--iidabashi {
+  background: var(--iidabashi);
 }
 
-.chip--umeda {
-  background: var(--umeda);
+.chip--yokohama {
+  background: var(--yokohama);
 }
 
 .tags {
@@ -219,8 +219,7 @@ a {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  overflow: hidden; /* キラッと光る帯をボタン内に収める（自身の影は切れない） */
-  /* ずらし影の量と色。押したときはこの量だけ沈む */
+  overflow: hidden;
   --sh: 6px;
   --sh-color: var(--navy);
   --shine: rgba(255, 255, 255, 0.85);
@@ -257,7 +256,7 @@ a {
   background: var(--white);
   color: var(--navy);
   --sh-color: var(--cyan);
-  --shine: rgba(0, 190, 232, 0.35); /* 白いボタンでは白い光が見えないので水色にする */
+  --shine: rgba(0, 190, 232, 0.35);
   box-shadow: var(--sh) var(--sh) 0 var(--sh-color);
 }
 
@@ -266,9 +265,6 @@ a.btn-sub:visited {
   color: var(--navy);
 }
 
-/* 押す演出
-   スマートフォン：タップした瞬間だけ影の位置まで沈む
-   PC（マウス操作）：ホバーで少し浮き、クリックで沈む */
 .btn:not(:disabled):not(.is-disabled):active {
   transform: translate(var(--sh), var(--sh));
   box-shadow: 0 0 0 var(--sh-color);
@@ -286,7 +282,6 @@ a.btn-sub:visited {
     box-shadow: 0 0 0 var(--sh-color);
   }
 
-  /* ホバーで光の帯が左から右へ1回通る */
   .btn:not(:disabled):not(.is-disabled)::after {
     content: "";
     position: absolute;
@@ -406,7 +401,6 @@ a.btn-sub:visited {
   padding: 18px 10px 0 0;
 }
 
-/* 2025年版の傾いた帯 */
 .hero__media::before {
   content: "";
   position: absolute;
@@ -457,7 +451,6 @@ a.btn-sub:visited {
   transform: rotate(-4deg);
 }
 
-/* 講座のジャンルを1つずつ独立したバッジにする */
 .hero__ribbon > span {
   position: relative;
   z-index: 0;
@@ -553,7 +546,6 @@ a.btn-sub:visited {
 .hero__date dt {
   display: grid;
   place-items: center;
-  /* letter-spacing が最後の文字の後ろにも付くぶん、上に同じ量の余白を足して上下中央にそろえる */
   padding: 0.2em 10px 0;
   background: var(--navy);
   color: var(--yellow-2);
@@ -673,7 +665,6 @@ a.btn-sub:visited {
   padding: 56px 0 72px;
 }
 
-/* 最後のセクション（お申し込み）は、すぐ下に斜めのラインとフッターが続くので下の余白を詰める */
 #schedule.section {
   padding-bottom: 24px;
 }
@@ -743,12 +734,12 @@ a.btn-sub:visited {
   box-shadow: 4px 4px 0 var(--navy);
 }
 
-.campus-label--kyodai::before {
-  background: var(--kyodai);
+.campus-label--iidabashi::before {
+  background: var(--iidabashi);
 }
 
-.campus-label--umeda::before {
-  background: var(--umeda);
+.campus-label--yokohama::before {
+  background: var(--yokohama);
 }
 
 .course {
@@ -772,12 +763,10 @@ a.btn-sub:visited {
 .course__title {
   position: relative;
   padding-left: 16px;
-  /* スマホでは講座名が「…作ろ／う！」のように途中で折り返さないよう、少し小さめにする */
   font-size: clamp(1.1rem, 4.8vw, 1.85rem);
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: 0.03em;
-  /* 講座名は語の途中で折り返さず、HTMLの <wbr> や空白の位置でだけ改行する */
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
@@ -803,7 +792,6 @@ a.btn-sub:visited {
   align-self: start;
 }
 
-/* 画像は切り抜かず、元の縦横比のまま表示する */
 .course__img img {
   width: 100%;
   height: auto;
@@ -901,10 +889,6 @@ a.btn-sub:visited {
   font-weight: 700;
 }
 
-/* ---------- 講座の詳細モーダル（スマートフォン） ----------
-   main.js が html に .has-course-modal を付けたときだけ、
-   カードを「講座名・写真・詳細を見る」に絞り、詳細はモーダルで開く。
-   JSが動かないときは、スマートフォンでもカードに全部表示される。 */
 .course__more {
   display: none;
 }
@@ -983,13 +967,12 @@ html.is-modal-open {
   font-size: clamp(1.05rem, 4.6vw, 1.2rem);
   font-weight: 900;
   line-height: 1.45;
-  /* カードの講座名と同じく、語の途中では折り返さない */
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
 
 .course-modal__title:focus {
-  outline: none; /* 開いたときに見出しへフォーカスを移すため（読み上げは講座名から始まる） */
+  outline: none;
 }
 
 .course-modal__title::before {
@@ -1041,8 +1024,6 @@ html.is-modal-open {
 
 /* ---------- 料金 ---------- */
 
-/* 行が右から入る演出の間に横スクロールバーが出ないよう、はみ出しは切る
-   （表は狭い画面で縦積みになるので、横にはみ出すことはない） */
 .price-wrap {
   overflow: hidden;
   background: var(--white);
@@ -1087,7 +1068,6 @@ html.is-modal-open {
   text-align: left;
 }
 
-/* 講座名の左に小さなサムネイルを置く */
 .price-item {
   display: flex;
   align-items: center;
@@ -1116,7 +1096,6 @@ html.is-modal-open {
   object-fit: cover;
 }
 
-/* 2講座セット：2枚のサムネイルを斜めの線で区切って1枚にまとめる */
 .price-thumb--split img:first-child {
   clip-path: polygon(0 0, 62% 0, 38% 100%, 0 100%);
 }
@@ -1141,7 +1120,6 @@ html.is-modal-open {
   line-height: 1.5;
 }
 
-/* 2講座セットの講座名：入るときは1行、入らないときは「＋」の後ろで改行する */
 .price-table__part {
   display: inline-block;
 }
@@ -1183,7 +1161,6 @@ html.is-modal-open {
   font-weight: 400;
 }
 
-/* 2講座セット：1講座の行と見分けられるよう淡い背景にする */
 .price-table__bundle {
   background: #fff7fa;
 }
@@ -1191,6 +1168,15 @@ html.is-modal-open {
 .price-table__bundle .price__note {
   color: var(--muted);
   text-decoration: line-through;
+}
+
+.price-note-multi {
+  margin-top: 20px;
+  padding: 16px; /* 上 16px、右 0、下 0、左 16px の余白 */
+  border-top: 1px solid var(--line); /* コンテンツ区切り線 */
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-sub);
 }
 
 .apply-band {
@@ -1236,7 +1222,6 @@ html.is-modal-open {
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  /* 左右の余白にチェックの置き場所を確保し、選択してもボタン幅が変わらないようにする */
   padding: 8px 1.5em;
   border: 2px solid var(--navy);
   border-radius: 4px;
@@ -1299,12 +1284,12 @@ html.is-modal-open {
   box-shadow: var(--shadow-soft);
 }
 
-.session[data-campus="kyodai"] {
-  border-top: 6px solid var(--kyodai);
+.session[data-campus="iidabashi"] {
+  border-top: 6px solid var(--iidabashi);
 }
 
-.session[data-campus="umeda"] {
-  border-top: 6px solid var(--umeda);
+.session[data-campus="yokohama"] {
+  border-top: 6px solid var(--yokohama);
 }
 
 .session__dates {
@@ -1401,10 +1386,9 @@ html.is-modal-open {
   margin-top: 4px;
 }
 
-/* まとめて申込：1講座の枠と見分けられるよう、点線の枠と淡い背景にする */
 .session--bundle {
   background: linear-gradient(135deg, #fff7fa, var(--white) 60%);
-  outline: 2px dashed var(--umeda);
+  outline: 2px dashed var(--yokohama);
   outline-offset: -2px;
 }
 
@@ -1418,7 +1402,6 @@ html.is-modal-open {
   line-height: 1.7;
 }
 
-/* まとめて申込の中の2講座：1講座ずつ小さなカードにし、講座名と日時の強弱をはっきり分ける */
 .session__when--bundle {
   gap: 16px;
 }
@@ -1430,11 +1413,10 @@ html.is-modal-open {
   padding: 10px 12px 11px;
   background: var(--white);
   border: 1px solid #f6c9d9;
-  border-left: 4px solid var(--umeda);
+  border-left: 4px solid var(--yokohama);
   border-radius: 6px;
 }
 
-/* 2つの講座の間に「＋」 */
 .session__when--bundle li + li::before {
   content: "＋";
   position: absolute;
@@ -1444,7 +1426,7 @@ html.is-modal-open {
   place-items: center;
   width: 22px;
   height: 22px;
-  background: var(--umeda);
+  background: var(--yokohama);
   color: var(--navy);
   border-radius: 50%;
   font-size: 0.85rem;
@@ -1591,7 +1573,6 @@ html.is-modal-open {
   transition: transform 0.25s ease;
 }
 
-/* JSが動くときは最初は隠し、FVの申込ボタンを通り過ぎてから出す（main.js が .is-visible を付ける） */
 .js .sticky-cta:not(.is-visible) {
   transform: translateY(110%);
 }
@@ -1630,12 +1611,10 @@ html.is-modal-open {
     width: 100%;
   }
 
-  /* 料金表：SPではサムネイルを出さず、講座名と金額だけにする */
   .price-thumb {
     display: none;
   }
 
-  /* 校舎の絞り込み：「すべて」を1行目、2校舎を2行目に半分ずつ並べる */
   .filters {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1646,7 +1625,6 @@ html.is-modal-open {
   }
 }
 
-/* 料金表：狭い画面では講座名を1行目、受講料を2行目に並べる */
 @media (max-width: 519px) {
   .price-table thead {
     position: absolute;
@@ -1745,7 +1723,6 @@ html.is-modal-open {
     display: none;
   }
 
-  /* PCではヘッダーの「申し込む」ボタンがあるので、メニューの「申込」は出さない */
   .nav__entry {
     display: none !important;
   }
@@ -1834,12 +1811,12 @@ html.is-modal-open {
     border-top: 0;
   }
 
-  .session[data-campus="kyodai"] {
-    border-left: 6px solid var(--kyodai);
+  .session[data-campus="iidabashi"] {
+    border-left: 6px solid var(--iidabashi);
   }
 
-  .session[data-campus="umeda"] {
-    border-left: 6px solid var(--umeda);
+  .session[data-campus="yokohama"] {
+    border-left: 6px solid var(--yokohama);
   }
 
   .session__dates {
@@ -1882,13 +1859,11 @@ html.is-modal-open {
    960px〜：PC
    ========================================================= */
 @media (min-width: 960px) {
-  /* まとめて申込：19日の講座を左、20日の講座を右に並べる */
   .session__when--bundle {
     grid-template-columns: 1fr 1fr;
     column-gap: 28px;
   }
 
-  /* 横並びのときは「＋」を2枚のカードの間（左端の中央）に置く */
   .session__when--bundle li + li::before {
     left: -14px;
     top: 50%;
@@ -1959,11 +1934,8 @@ html.is-modal-open {
 
 /* =========================================================
    演出（assets/js/motion.js と対）
-   .js-motion は <head> のスクリプトが付ける。視差効果を減らす設定の人には付かない。
-   スクロールで現れる要素（.rv）は motion.js が付けるので、JSが動かなくても内容は見える。
    ========================================================= */
 
-/* スクロール進捗バー（ヘッダー上端の線に重ねる） */
 .scroll-progress {
   position: absolute;
   top: 0;
@@ -1977,7 +1949,6 @@ html.is-modal-open {
   pointer-events: none;
 }
 
-/* FVの雪 */
 .hero__snow {
   position: absolute;
   inset: 0;
@@ -2088,7 +2059,6 @@ html.is-modal-open {
   animation: m-up 0.7s 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
 }
 
-/* 「冬の講習会」の水色の帯が左から伸びる */
 .js-motion .hero__title-main .marker {
   animation: m-wipe 0.75s 0.5s cubic-bezier(0.7, 0, 0.2, 1) backwards;
 }
@@ -2121,7 +2091,6 @@ html.is-modal-open {
   animation: m-up 0.7s 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
 }
 
-/* FVの写真がマウスの方へ少し傾く（変数は motion.js が入れる。PCのみ） */
 .js-motion .hero__photo {
   transform: perspective(1000px) translate(var(--tx, 0px), var(--ty, 0px)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   transition: transform 0.5s ease-out;
@@ -2158,7 +2127,6 @@ html.is-modal-open {
   transform: scale(0.92);
 }
 
-/* 講習会紹介のカードは動かさず、透明度だけで現れる */
 .js-motion .rv[data-rv="fade"] {
   transition-duration: 1s, 1s, 0.15s, 0.15s;
 }
@@ -2168,7 +2136,6 @@ html.is-modal-open {
   transform: none;
 }
 
-/* 見出しの黄色い線が伸びる */
 .js-motion .section-head__en.rv::before {
   transform: scaleX(0);
   transform-origin: left center;
@@ -2179,7 +2146,6 @@ html.is-modal-open {
   transform: none;
 }
 
-/* 日程カード：日付ブロックがくるっと回って出る */
 .js-motion .session.rv .day {
   opacity: 0;
   transform: perspective(400px) rotateX(-90deg);
@@ -2198,7 +2164,6 @@ html.is-modal-open {
   transform: none;
 }
 
-/* 斜めのラインが左から引かれる */
 .js-motion .stripes.rv {
   opacity: 1;
   transform: none;
@@ -2226,7 +2191,6 @@ html.is-modal-open {
   transform: translateX(-10%) rotate(3deg) scaleX(1);
 }
 
-/* 申込欄：現れたあと光が1回通る */
 .apply-band {
   position: relative;
   overflow: hidden;
@@ -2249,9 +2213,7 @@ html.is-modal-open {
   animation: m-sweep 1.3s 0.6s ease-out;
 }
 
-/* ---------- ハロウィン仕様の幕（?theme=halloween のときだけ <head> が付ける） ----------
-   演出本体は assets/css/halloween.css / assets/js/halloween.js。
-   ここは読み込み前から画面を黒く覆い、FVの登場演出を止めておく分だけ。 */
+/* ---------- ハロウィン仕様の幕 ---------- */
 html.hw-cover::after {
   content: "";
   position: fixed;

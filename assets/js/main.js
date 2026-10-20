@@ -6,9 +6,9 @@
   const count = document.querySelector("[data-filter-count]");
   const sticky = document.querySelector("[data-sticky-cta]");
   const campusNames = {
-    all: "関西2校舎",
-    kyodai: "京大本校",
-    umeda: "梅田校",
+    all: "関東2校舎",
+    iidabashi: "飯田橋校",
+    yokohama: "横浜校",
   };
   const statusLabels = {
     preparing: "準備中",
@@ -152,14 +152,11 @@
   });
 
   // スマートフォン下部の固定CTA
-  // FVの申込ボタンを上へ通り過ぎてから出す（ページを開いた直後にFVの文章を隠さないため）。
-  // お申し込み欄（講座ごとの申込ボタン）が見えている間は、同じ行き先のボタンが二重にならないよう隠す。
   const heroActions = document.querySelector(".hero__actions");
   const applyBands = [...document.querySelectorAll(".apply-band, #schedule-list")];
   if (sticky && heroActions && "IntersectionObserver" in window) {
     const bandsOnScreen = new Set();
     const updateSticky = () => {
-      // 「通り過ぎたか」は位置で毎回判定する（勢いよくスクロールしたり、ページ内リンクで飛んだりしても取りこぼさない）
       const heroPassed = heroActions.getBoundingClientRect().bottom < 0;
       sticky.classList.toggle("is-visible", heroPassed && bandsOnScreen.size === 0);
     };
@@ -210,7 +207,6 @@
     const modalBody = modal.querySelector(".course-modal__body");
 
     const openCourse = (course) => {
-      // カードの講座名を改行位置（<br> や <wbr>）ごと写す
       modalTitle.innerHTML = course.querySelector(".course__title").innerHTML;
       modalBody.replaceChildren(
         ...[".tags", ".course__img", ".course__text"]
@@ -236,14 +232,12 @@
       more.setAttribute("aria-label", `${name}の詳細を見る`);
       more.innerHTML = '詳細を見る<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>';
       course.append(more);
-      // カードのどこをタップしても開く（ボタンのクリックもここに伝わる）
       course.addEventListener("click", () => {
         if (spQuery.matches) openCourse(course);
       });
     });
 
     modal.addEventListener("click", (event) => {
-      // 背景（モーダルの外側）または閉じるボタンで閉じる
       if (event.target === modal || event.target.closest("[data-modal-close]")) modal.close();
     });
     modal.addEventListener("close", () => document.documentElement.classList.remove("is-modal-open"));
